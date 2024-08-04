@@ -10,18 +10,13 @@ import {
   SelectValue,
 } from "../select"
 
-type OptionProps = React.HTMLProps<HTMLOptionElement>
-type OptionElement = React.ReactElement<OptionProps>
-
-export default function YearAndMonthDropdown({
+export default function MonthAndYearDropdown({
   value,
   onChange,
-  children,
   name,
+  options,
   "aria-label": ariaLabel,
 }: DropdownProps) {
-  const options = React.Children.toArray(children) as OptionElement[]
-
   const handleChange = (value: string) => {
     const changeEvent = {
       target: {
@@ -37,12 +32,12 @@ export default function YearAndMonthDropdown({
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
-        {options.map((option, childIdx: number) => (
+        {options?.map((option, childIdx: number) => (
           <SelectItem
-            key={`${option.props.value}-${childIdx}`}
-            value={option.props.value?.toString() ?? ""}
+            key={`${option.value}-${childIdx}`}
+            value={option.value?.toString() ?? ""}
           >
-            {option.props.children}
+            {option.label}
           </SelectItem>
         ))}
       </SelectContent>
