@@ -1,6 +1,6 @@
 "use client"
 import { addDays, format, startOfDay } from "date-fns"
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState } from "react"
 
 import { cn } from "@/app/lib/utils"
@@ -37,24 +37,23 @@ export function MonthAndYearDatepicker() {
           <Calendar
             mode="single"
             captionLayout="dropdown"
+            hideNavigation={true}
             selected={date}
             onSelect={setDate}
             showOutsideDays={false}
+            endMonth={new Date(2099, 11)}
             disabled={(date) =>
               startOfDay(date) < startOfDay(fromDate) ||
               startOfDay(date) > startOfDay(toDate)
             }
             components={{
               Dropdown: MonthAndYearDropdown,
-              // Caption: (props) => {
-              //   console.log("props", props)
-              //   return <h1>Caption</h1>
-              // },
-
-              // CaptionLabel: (props) => {
-              //   console.log("props", props)
-              //   return <h1>CaptionLabel</h1>
-              // },
+              Chevron: ({ orientation }) =>
+                orientation === "left" ? (
+                  <ChevronLeft className="size-4" />
+                ) : (
+                  <ChevronRight className="size-4" />
+                ),
             }}
           />
         </PopoverContent>
