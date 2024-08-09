@@ -54,7 +54,6 @@ describe("withJsonBody", () => {
     }
 
     expect(error).toBeDefined()
-
     expect(resolver).not.toHaveBeenCalled()
   })
 })

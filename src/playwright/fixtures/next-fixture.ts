@@ -1,4 +1,4 @@
-import { test as base } from "@playwright/test"
+import { test as base } from "@chromatic-com/playwright"
 
 import { setupNextServer } from "../setup"
 import { buildLocalUrl } from "../utils"

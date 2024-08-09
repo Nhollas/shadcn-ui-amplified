@@ -43,7 +43,7 @@ function Calendar({
           buttonVariants({ variant: "ghost" }),
           "size-8 relative p-0 text-center text-sm focus-within:relative focus-within:z-20 rounded-md",
           props.mode === "range"
-            ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:aria-selected:rounded-l-md last:aria-selected:rounded-r-md"
+            ? "[&.day-range-end]:rounded-r-md [&.day-range-start]:rounded-l-md first:aria-selected:rounded-l-md last:aria-selected:rounded-r-md"
             : "aria-selected:rounded-md",
         ),
         day_button: "size-8 rounded-md",
