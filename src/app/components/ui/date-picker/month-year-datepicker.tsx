@@ -16,6 +16,9 @@ export function MonthAndYearDatepicker() {
   const [date, setDate] = useState<Date | undefined>()
   const fromDate = new Date()
   const toDate = addDays(fromDate ?? new Date(), 30)
+  const disabled = (date: Date) =>
+    startOfDay(date) < startOfDay(fromDate) ||
+    startOfDay(date) > startOfDay(toDate)
 
   return (
     <FormItem className="flex flex-col">
@@ -40,12 +43,9 @@ export function MonthAndYearDatepicker() {
             hideNavigation={true}
             selected={date}
             onSelect={setDate}
-            showOutsideDays={false}
+            showOutsideDays={true}
             endMonth={new Date(2099, 11)}
-            disabled={(date) =>
-              startOfDay(date) < startOfDay(fromDate) ||
-              startOfDay(date) > startOfDay(toDate)
-            }
+            // disabled={disabled}
             components={{
               Dropdown: MonthAndYearDropdown,
               Chevron: ({ orientation }) =>
