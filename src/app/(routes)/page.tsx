@@ -1,9 +1,17 @@
-import { MonthAndYearDatepicker } from "@/app/components/ui"
+import {
+  DatePickerWithDisabledRange,
+  DatePickerWithDropdown,
+  DatePickerWithPresets,
+  DatePickerWithRange,
+} from "@/app/components/ui"
 
 export default function HomePage() {
   return (
-    <>
-      <MonthAndYearDatepicker />
-    </>
+    <div className="flex flex-col gap-y-8">
+      <DatePickerWithDropdown />
+      <DatePickerWithDisabledRange />
+      <DatePickerWithRange />
+      <DatePickerWithPresets />
+    </div>
   )
 }
