@@ -19,8 +19,8 @@ function Calendar({
       showOutsideDays={showOutsideDays}
       className={cn("p-3", className)}
       classNames={{
-        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-        month: "space-y-4",
+        months: "flex flex-col gap-y-4",
+        month: "flex flex-col gap-y-4",
         month_caption: "flex justify-center relative items-center",
         dropdowns: "flex items-center flex-row gap-x-3 w-full",
         dropdown: "flex",
@@ -28,11 +28,11 @@ function Calendar({
         nav: "flex items-center relative justify-between",
         button_previous: cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
+          "size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         ),
         button_next: cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
+          "size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         ),
         month_grid: "w-full border-collapse space-y-1",
         weekdays: "flex",
@@ -41,12 +41,12 @@ function Calendar({
         week: "flex w-full mt-2",
         day: cn(
           buttonVariants({ variant: "ghost" }),
-          "size-8 relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&[aria-selected].day-outside]:bg-accent/50 rounded-md",
+          "size-8 relative p-0 text-center text-sm focus-within:relative focus-within:z-20 rounded-md",
           props.mode === "range"
             ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:aria-selected:rounded-l-md last:aria-selected:rounded-r-md"
             : "aria-selected:rounded-md",
         ),
-        day_button: cn("size-8 rounded-md"),
+        day_button: "size-8 rounded-md",
         range_start: "day-range-start",
         range_end: "day-range-end",
         selected:

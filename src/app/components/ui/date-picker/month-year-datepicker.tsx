@@ -40,7 +40,7 @@ export function MonthAndYearDatepicker() {
           <Calendar
             mode="single"
             captionLayout="dropdown"
-            hideNavigation={true}
+            hideNavigation={false}
             selected={date}
             onSelect={setDate}
             showOutsideDays={true}
