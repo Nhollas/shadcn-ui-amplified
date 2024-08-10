@@ -1,6 +1,6 @@
 "use client"
 import { format } from "date-fns"
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
 import { useState } from "react"
 
 import {
@@ -41,7 +41,7 @@ export function DatePickerWithDropdown() {
         <PopoverContent className="w-auto p-0" align="start">
           <Calendar
             mode="single"
-            captionLayout="dropdown"
+            captionLayout="dropdown-buttons"
             selected={date}
             onSelect={setDate}
             showOutsideDays={true}
@@ -49,6 +49,8 @@ export function DatePickerWithDropdown() {
             fromYear={1950}
             components={{
               Dropdown: MonthAndYearDropdown,
+              IconLeft: () => <ChevronLeftIcon className="size-4" />,
+              IconRight: () => <ChevronRightIcon className="size-4" />,
             }}
           />
         </PopoverContent>
