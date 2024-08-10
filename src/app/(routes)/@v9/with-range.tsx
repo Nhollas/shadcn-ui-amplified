@@ -3,15 +3,19 @@
 import { addDays, format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 import * as React from "react"
-import { DateRange } from "react-day-picker"
+import { DateRange } from "react-day-picker-v9"
 
+import {
+  Label,
+  FormItem,
+  Button,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/app/components/ui"
 import { cn } from "@/app/lib/utils"
 
-import { Button } from "../button"
-import { Calendar } from "../calendar"
-import { FormItem } from "../form"
-import { Label } from "../label"
-import { Popover, PopoverContent, PopoverTrigger } from "../popover"
+import { Calendar } from "./calendar"
 
 export function DatePickerWithRange() {
   const [date, setDate] = React.useState<DateRange | undefined>({
@@ -21,7 +25,7 @@ export function DatePickerWithRange() {
 
   return (
     <FormItem className="flex flex-col">
-      <Label>Datepicker With Range</Label>
+      <Label id="datepicker-range">Datepicker With Range</Label>
       <Popover>
         <PopoverTrigger asChild>
           <Button
@@ -31,6 +35,7 @@ export function DatePickerWithRange() {
               "w-[300px] justify-start text-left font-normal",
               !date && "text-muted-foreground",
             )}
+            aria-labelledby="datepicker-range"
           >
             <CalendarIcon className="mr-2 size-4" />
             {date?.from ? (

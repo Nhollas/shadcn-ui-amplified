@@ -9,6 +9,7 @@ export const test = base.extend<
     port: string
   }
 >({
+  disableAutoSnapshot: true,
   baseURL: async ({ port }, use) => {
     await use(buildLocalUrl(port))
   },

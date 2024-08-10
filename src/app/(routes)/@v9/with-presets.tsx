@@ -4,27 +4,30 @@ import { addDays, format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 import * as React from "react"
 
-import { cn } from "@/app/lib/utils"
-
-import { Button } from "../button"
-import { Calendar } from "../calendar"
-import { FormItem } from "../form"
-import { Label } from "../label"
-import { Popover, PopoverContent, PopoverTrigger } from "../popover"
 import {
+  Button,
+  FormItem,
+  Label,
+  Paragraph,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../select"
+} from "@/app/components/ui"
+import { cn } from "@/app/lib/utils"
+
+import { Calendar } from "./calendar"
 
 export function DatePickerWithPresets() {
   const [date, setDate] = React.useState<Date>()
 
   return (
     <FormItem className="flex flex-col">
-      <Label>Datepicker With Presets</Label>
+      <Label id="datepicker-presets">Datepicker With Presets</Label>
       <Popover>
         <PopoverTrigger asChild>
           <Button
@@ -33,6 +36,7 @@ export function DatePickerWithPresets() {
               "w-[280px] justify-start text-left font-normal",
               !date && "text-muted-foreground",
             )}
+            aria-labelledby="datepicker-presets"
           >
             <CalendarIcon className="mr-2 size-4" />
             {date ? format(date, "PPP") : <span>Pick a date</span>}
@@ -64,9 +68,9 @@ export function DatePickerWithPresets() {
           </div>
         </PopoverContent>
       </Popover>
-      <p className="text-[0.8rem] text-muted-foreground">
+      <Paragraph className="text-[0.8rem] text-muted-foreground">
         You can select today, tomorrow, in 3 days and in a week.
-      </p>
+      </Paragraph>
     </FormItem>
   )
 }

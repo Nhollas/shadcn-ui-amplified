@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {},
+  experimental: {
+    optimizePackageImports: ["@/app/components/ui"],
+  },
 }
 
 export default nextConfig

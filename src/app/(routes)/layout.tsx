@@ -11,15 +11,18 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({
-  children,
+  v9,
+  v8,
 }: {
-  children: React.ReactNode
+  v9: React.ReactNode
+  v8: React.ReactNode
 }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="mx-auto mb-16 max-w-screen-sm p-4 sm:mb-[72px] sm:p-6">
-          {children}
+        <main className="mx-auto mb-16 flex max-w-screen-md flex-row gap-x-8 p-4 sm:mb-[72px] sm:p-6">
+          {v9}
+          {v8}
         </main>
       </body>
     </html>

@@ -1,6 +1,6 @@
 "use client"
 import React from "react"
-import { DropdownProps } from "react-day-picker"
+import { DropdownProps } from "react-day-picker-v8"
 
 import {
   Select,
@@ -8,15 +8,19 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../select"
+} from "@/app/components/ui"
 
 export default function MonthAndYearDropdown({
   value,
   onChange,
   name,
-  options,
+  children,
   "aria-label": ariaLabel,
 }: DropdownProps) {
+  const options = React.Children.toArray(children) as React.ReactElement<
+    React.HTMLProps<HTMLOptionElement>
+  >[]
+
   const handleChange = (value: string) => {
     const changeEvent = {
       target: {
@@ -34,10 +38,10 @@ export default function MonthAndYearDropdown({
       <SelectContent>
         {options?.map((option, childIdx: number) => (
           <SelectItem
-            key={`${option.value}-${childIdx}`}
-            value={option.value?.toString() ?? ""}
+            key={`${option.props.value}-${childIdx}`}
+            value={option.props.value?.toString() ?? ""}
           >
-            {option.label}
+            {option.props.children}
           </SelectItem>
         ))}
       </SelectContent>

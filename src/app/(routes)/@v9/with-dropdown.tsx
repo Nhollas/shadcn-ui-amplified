@@ -3,21 +3,27 @@ import { format } from "date-fns"
 import { CalendarIcon, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState } from "react"
 
+import {
+  Button,
+  FormItem,
+  Label,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/app/components/ui"
 import { cn } from "@/app/lib/utils"
 
-import { Button } from "../button"
-import { Calendar } from "../calendar"
-import MonthAndYearDropdown from "../calendar/month-year-dropdown"
-import { FormItem } from "../form"
-import { Label } from "../label"
-import { Popover, PopoverContent, PopoverTrigger } from "../popover"
+import { Calendar } from "./calendar"
+import MonthAndYearDropdown from "./month-year-dropdown"
 
 export function DatePickerWithDropdown() {
   const [date, setDate] = useState<Date | undefined>()
 
   return (
     <FormItem className="flex flex-col">
-      <Label>Datepicker With Month and Year Dropdown</Label>
+      <Label id="datepicker-month-year-dropdown">
+        Datepicker With Month and Year Dropdown
+      </Label>
       <Popover>
         <PopoverTrigger asChild>
           <Button
@@ -26,6 +32,7 @@ export function DatePickerWithDropdown() {
               "w-[280px] justify-start text-left font-normal",
               !date && "text-muted-foreground",
             )}
+            aria-labelledby="datepicker-month-year-dropdown"
           >
             <CalendarIcon className="mr-2 size-4" />
             {date ? format(date, "PPP") : <span>Pick a date</span>}
@@ -35,7 +42,6 @@ export function DatePickerWithDropdown() {
           <Calendar
             mode="single"
             captionLayout="dropdown"
-            hideNavigation={false}
             selected={date}
             onSelect={setDate}
             showOutsideDays={true}

@@ -1,6 +1,6 @@
 storybook v8.2.8
 
-info => Cleaning outputDir: ../../../../../var/folders/lh/z2ygp4_s1z57h9l_4qhvqb9m0000gn/T/chromatic--88777-qs0ohQdoAhdd
+info => Cleaning outputDir: ../../../../../var/folders/lh/z2ygp4_s1z57h9l_4qhvqb9m0000gn/T/chromatic--4399-NmqTHJb9FRHf
 info => Loading presets
 info => Building manager..
 WARN unable to find package.json for @chromatic-com/shared-e2e
@@ -10,10 +10,10 @@ info => Building preview..
 info Addon-docs: using MDX3
 info => Using implicit CSS loaders
 info => Using default Webpack5 setup
-info => Copying static files: test-results/chromatic-archives/archive at ../../../../../var/folders/lh/z2ygp4_s1z57h9l_4qhvqb9m0000gn/T/chromatic--88777-qs0ohQdoAhdd
+info => Copying static files: test-results/chromatic-archives/archive at ../../../../../var/folders/lh/z2ygp4_s1z57h9l_4qhvqb9m0000gn/T/chromatic--4399-NmqTHJb9FRHf
 WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 WARN This can impact web performance.
 WARN Assets: 
 WARN   131.102da1e1.iframe.bundle.js (1.22 MiB)
-info => Preview built (2.81 s)
-info => Output directory: /var/folders/lh/z2ygp4_s1z57h9l_4qhvqb9m0000gn/T/chromatic--88777-qs0ohQdoAhdd
+info => Preview built (2.84 s)
+info => Output directory: /var/folders/lh/z2ygp4_s1z57h9l_4qhvqb9m0000gn/T/chromatic--4399-NmqTHJb9FRHf
