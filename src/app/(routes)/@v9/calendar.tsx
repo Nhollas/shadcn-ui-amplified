@@ -26,14 +26,14 @@ function Calendar({
         dropdowns: "flex items-center flex-col gap-3 w-full mx-10",
         dropdown: "flex",
         caption_label: "text-sm font-medium",
-        nav: "absolute top-0 inset-x-0 flex items-center justify-between h-9",
+        nav: "space-x-1 flex items-center absolute inset-x-0",
         button_previous: cn(
           buttonVariants({ variant: "outline" }),
-          "size-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-0 z-50",
+          "size-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-1 -top-1 z-50",
         ),
         button_next: cn(
           buttonVariants({ variant: "outline" }),
-          "size-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute right-0 z-50",
+          "size-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute right-1 -top-1 z-50",
         ),
         month_grid: "w-full border-collapse space-y-1",
         weekdays: "flex",
