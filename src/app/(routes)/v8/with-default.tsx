@@ -20,7 +20,7 @@ export function DatePickerWithDefaults() {
 
   return (
     <FormItem className="flex flex-col">
-      <Label id="datepicker-disabled-range">Datepicker With Defaults</Label>
+      <Label id="datepicker-default-range-v8">Datepicker With Defaults</Label>
       <Popover>
         <PopoverTrigger asChild>
           <Button
@@ -29,7 +29,7 @@ export function DatePickerWithDefaults() {
               "w-[280px] justify-start text-left font-normal",
               !date && "text-muted-foreground",
             )}
-            aria-labelledby="datepicker-disabled-range"
+            aria-labelledby="datepicker-default-range-v8"
           >
             <CalendarIcon className="mr-2 size-4" />
             {date ? format(date, "PPP") : <span>Pick a date</span>}

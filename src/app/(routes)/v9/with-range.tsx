@@ -3,7 +3,7 @@
 import { addDays, format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 import * as React from "react"
-import { DateRange } from "react-day-picker-v8"
+import { DateRange } from "react-day-picker-v9"
 
 import {
   Label,
@@ -25,7 +25,7 @@ export function DatePickerWithRange() {
 
   return (
     <FormItem className="flex flex-col">
-      <Label id="datepicker-range">Datepicker With Range</Label>
+      <Label id="datepicker-range-v9">Datepicker With Range</Label>
       <Popover>
         <PopoverTrigger asChild>
           <Button
@@ -35,7 +35,7 @@ export function DatePickerWithRange() {
               "w-[300px] justify-start text-left font-normal",
               !date && "text-muted-foreground",
             )}
-            aria-labelledby="datepicker-range"
+            aria-labelledby="datepicker-range-v9"
           >
             <CalendarIcon className="mr-2 size-4" />
             {date?.from ? (
@@ -54,8 +54,8 @@ export function DatePickerWithRange() {
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="start">
           <Calendar
-            initialFocus
             mode="range"
+            endMonth={new Date(2099, 11)}
             defaultMonth={date?.from}
             selected={date}
             onSelect={setDate}

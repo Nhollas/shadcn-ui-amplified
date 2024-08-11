@@ -26,7 +26,7 @@ export function DatePickerWithDisabledRange() {
 
   return (
     <FormItem className="flex flex-col">
-      <Label id="datepicker-disabled-range">
+      <Label id="datepicker-disabled-range-v9">
         Datepicker With Disabled Range
       </Label>
       <Popover>
@@ -37,7 +37,7 @@ export function DatePickerWithDisabledRange() {
               "w-[280px] justify-start text-left font-normal",
               !date && "text-muted-foreground",
             )}
-            aria-labelledby="datepicker-disabled-range"
+            aria-labelledby="datepicker-disabled-range-v9"
           >
             <CalendarIcon className="mr-2 size-4" />
             {date ? format(date, "PPP") : <span>Pick a date</span>}

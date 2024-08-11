@@ -27,7 +27,7 @@ export function DatePickerWithPresets() {
 
   return (
     <FormItem className="flex flex-col">
-      <Label id="datepicker-presets">Datepicker With Presets</Label>
+      <Label id="datepicker-presets-v8">Datepicker With Presets</Label>
       <Popover>
         <PopoverTrigger asChild>
           <Button
@@ -36,7 +36,7 @@ export function DatePickerWithPresets() {
               "w-[280px] justify-start text-left font-normal",
               !date && "text-muted-foreground",
             )}
-            aria-labelledby="datepicker-presets"
+            aria-labelledby="datepicker-presets-v8"
           >
             <CalendarIcon className="mr-2 size-4" />
             {date ? format(date, "PPP") : <span>Pick a date</span>}
@@ -59,12 +59,7 @@ export function DatePickerWithPresets() {
             </SelectContent>
           </Select>
           <div className="rounded-md border">
-            <Calendar
-              mode="single"
-              selected={date}
-              onSelect={setDate}
-              endMonth={new Date(2099, 11)}
-            />
+            <Calendar mode="single" selected={date} onSelect={setDate} />
           </div>
         </PopoverContent>
       </Popover>
