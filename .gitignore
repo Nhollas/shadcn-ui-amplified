@@ -11,6 +11,7 @@
 /playwright-report
 /test-results
 **/playwright/state
+build-storybook.log
 
 # next.js
 /.next/
