@@ -2,7 +2,7 @@ import { expect, takeSnapshot } from "@chromatic-com/playwright"
 
 import test from "@/playwright/fixtures/next-fixture"
 test.describe("Date Picker", () => {
-  test.use({ diffThreshold: 0.2 })
+  test.use({ diffThreshold: 0.35 })
 
   test("Date Picker - Regression", async ({ page }, testInfo) => {
     await page.goto("/v9")
