@@ -13,7 +13,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body>
         <main className="mx-auto mb-16 flex max-w-screen-md flex-row gap-x-8 p-4 sm:p-6">
           {children}
