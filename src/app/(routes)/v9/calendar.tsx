@@ -57,7 +57,7 @@ function Calendar({
           "day-outside [&>button]:text-muted-foreground [&>button]:!opacity-50 [&>button]:aria-selected:!bg-accent/50 [&>button]:aria-selected:!text-muted-foreground [&>button]:aria-selected:!opacity-30",
         disabled: "text-muted-foreground opacity-50",
         range_middle:
-          "[&>button]:aria-selected:bg-accent [&>button]:aria-selected:text-accent-foreground",
+          "[&>button]:aria-selected:!bg-accent [&>button]:aria-selected:!text-accent-foreground",
         hidden: "invisible",
         ...classNames,
       }}
