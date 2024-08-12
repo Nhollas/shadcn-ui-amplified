@@ -20,13 +20,13 @@ function Calendar({
       showOutsideDays={showOutsideDays}
       className={cn("p-3", className)}
       classNames={{
-        months: "flex flex-col gap-y-4 relative",
+        months: "flex flex-col sm:flex-row gap-y-4 sm:gap-x-4 sm:gap-y-0",
         month: "flex flex-col gap-y-4",
         month_caption: "flex justify-center relative items-center",
         dropdowns: "flex items-center flex-col gap-3 w-full mx-10",
         dropdown: "flex",
         caption_label: "text-sm font-medium",
-        nav: "space-x-1 flex items-center absolute inset-x-0",
+        nav: "space-x-1 flex items-center absolute inset-x-0 mx-3",
         button_previous: cn(
           buttonVariants({ variant: "outline" }),
           "size-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-1 -top-1 z-50",
