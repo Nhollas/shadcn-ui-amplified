@@ -54,7 +54,7 @@ function Calendar({
           "day-selected [&>button]:aria-selected:bg-primary [&>button]:aria-selected:text-primary-foreground [&>button]:hover:bg-primary [&>button]:hover:text-primary-foreground [&>button]:aria-selected:focus:bg-primary [&>button]:aria-selected:focus:text-primary-foreground",
         today: "[&>button]:bg-accent [&>button]:text-accent-foreground",
         outside:
-          "day-outside [&>button]:text-muted-foreground [&>button]:!opacity-50 [&>button]:aria-selected:!bg-accent/50 [&>button]:aria-selected:!text-muted-foreground [&>button]:aria-selected:!opacity-30",
+          "day-outside [&>button]:text-muted-foreground [&>button]:opacity-50 [&>button]:aria-selected:!bg-accent/50 [&>button]:aria-selected:!text-muted-foreground [&>button]:aria-selected:!opacity-30",
         disabled: "text-muted-foreground opacity-50",
         range_middle:
           "[&>button]:aria-selected:!bg-accent [&>button]:aria-selected:!text-accent-foreground",
