@@ -41,9 +41,9 @@ function Calendar({
           "text-muted-foreground rounded-md w-8 font-normal text-[0.8rem]",
         week: "flex w-full mt-2",
         day: cn(
-          "group relative p-0 text-center text-sm focus-within:relative focus-within:z-20 aria-selected:bg-accent [&[aria-selected].day-outside]:bg-accent/50 [&[aria-selected].day-range-end]:rounded-r-md",
+          "group relative p-0 text-center text-sm focus-within:relative focus-within:z-20 aria-selected:bg-accent aria-selected:[&.day-outside]:bg-accent/50",
           props.mode === "range"
-            ? "[&[.day-range-end]:rounded-r-md [&[.day-range-start]:rounded-l-md first:aria-selected:rounded-l-md last:aria-selected:rounded-r-md"
+            ? "[&.day-range-end]:rounded-r-md [&.day-range-start]:rounded-l-md aria-selected:[&.day-range-end]:rounded-r-md first:aria-selected:rounded-l-md last:aria-selected:rounded-r-md"
             : "aria-selected:rounded-md",
         ),
         day_button:
@@ -51,13 +51,13 @@ function Calendar({
         range_start: "day-range-start",
         range_end: "day-range-end",
         selected:
-          "day-selected [&>button]:aria-selected:bg-primary [&>button]:aria-selected:text-primary-foreground [&>button]:hover:bg-primary [&>button]:hover:text-primary-foreground [&>button]:aria-selected:focus:bg-primary [&>button]:aria-selected:focus:text-primary-foreground",
-        today: "[&>button]:bg-accent [&>button]:text-accent-foreground",
+          "day-selected *:aria-selected:bg-primary *:aria-selected:text-primary-foreground *:hover:bg-primary *:hover:text-primary-foreground *:aria-selected:focus:bg-primary *:aria-selected:focus:text-primary-foreground",
+        today: "*:bg-accent *:text-accent-foreground",
         outside:
-          "day-outside [&>button]:text-muted-foreground [&>button]:opacity-50 [&>button]:aria-selected:!bg-accent/50 [&>button]:aria-selected:!text-muted-foreground [&>button]:aria-selected:!opacity-30",
+          "day-outside *:text-muted-foreground *:opacity-50 *:aria-selected:!bg-accent/50 *:aria-selected:!text-muted-foreground *:aria-selected:!opacity-30",
         disabled: "text-muted-foreground opacity-50",
         range_middle:
-          "[&>button]:aria-selected:!bg-accent [&>button]:aria-selected:!text-accent-foreground",
+          "day-range-middle *:aria-selected:bg-accent *:aria-selected:text-accent-foreground",
         hidden: "invisible",
         ...classNames,
       }}
