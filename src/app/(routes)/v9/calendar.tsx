@@ -30,7 +30,7 @@ function Calendar({
         button_previous: cn(
           buttonVariants({ variant: "outline" }),
           "size-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute z-50 left-1",
-          props.captionLayout ? "top-7" : "-top-1",
+          props.captionLayout?.includes("dropdown") ? "top-7" : "-top-1",
         ),
         button_next: cn(
           buttonVariants({ variant: "outline" }),
